@@ -1,0 +1,22 @@
+{
+  "name": "grading_automation",
+  "version": "1.0.0",
+  "description": "This is a script that automates the entering of grades for students. ",
+  "main": "script.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alejandro-Fuste/Grading-Automation.git"
+  },
+  "author": "Alejandro Fuste",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alejandro-Fuste/Grading-Automation/issues"
+  },
+  "homepage": "https://github.com/Alejandro-Fuste/Grading-Automation#readme",
+  "dependencies": {
+    "puppeteer": "^5.3.1"
+  }
+}
