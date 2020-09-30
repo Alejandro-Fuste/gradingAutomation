@@ -10,8 +10,7 @@ require('dotenv').config();
 	const page = await browser.newPage();
 	await page.goto('https://launchpad.classlink.com/ocps');
 
-	// await browser.waitForTarget(() => false);
-
+	// Enter username, password, and click the signin button
 	await page.waitForSelector('#username');
 	await page.waitForSelector('#password');
 
@@ -19,6 +18,16 @@ require('dotenv').config();
 	await page.type('#password', process.env.LAUNCHPAD_PASSWORD);
 
 	await page.click('#signin', [ { clickCount: 2 } ]);
+
+	// Double click on the Canvas button
+
+	await page.waitForXPath(
+		'/html/body/app-root/secure/div/div/div/app-apps-container/application[3]/div[1]/div[1]/img'
+	);
+
+	await page.click('/html/body/app-root/secure/div/div/div/app-apps-container/application[3]/div[1]/div[1]/img', [
+		{ clickCount: 2 }
+	]);
 
 	// await browser.close();
 })();
