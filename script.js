@@ -21,23 +21,24 @@ require('dotenv').config();
 
 	// Double click on the Canvas button
 
-	await page.waitForXPath(
-		'/html/body/app-root/secure/div/div/div/app-apps-container/application[3]/div[1]/div[1]/img'
-	);
+	await page.waitForXPath('/html/body/app-root/secure/div/div/div/app-apps-container/application[3]');
 
-	await page.click('/html/body/app-root/secure/div/div/div/app-apps-container/application[3]/div[1]/div[1]/img', [
-		{ clickCount: 2 }
-	]);
+	await page.mouse.click(683, 141, [ { clickCount: 2 } ]);
+
+	// Single click on the class
+
+	// Click on the "Grades"
+
+	// Find ungraded all assignments
+
+	// Enter a grade of "100" for all atypements
 
 	// await browser.close();
 })();
 
-// Double click on the Canvas button
+/* 
 
-// Single click on the class
+Code to get mouse coordinates:
+window.addEventListener('mousemove', (e) => console.log(`x: ${e.x} | y: ${e.y}`));
 
-// Click on the "Grades"
-
-// Find ungraded all assignments
-
-// Enter a grade of "100" for all atypements
+*/
