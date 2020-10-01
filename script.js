@@ -27,6 +27,10 @@ require('dotenv').config();
 
 	// Single click on the class
 
+	await page.waitForXPath('/html/body/div[2]/div[2]/div/div[2]/div[1]/div/div/div[5]/div/div[1]/div[1]/div/a');
+
+	await page.mouse.click(261, 321, [ { clickCount: 2 } ]);
+
 	// Click on the "Grades"
 
 	// Find ungraded all assignments
