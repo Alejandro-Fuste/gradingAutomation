@@ -1,5 +1,8 @@
 const { chromium } = require('playwright');
 
+// Requiring .dotenv file
+require('dotenv').config();
+
 (async () => {
 	// Go the Launchpad website (https://launchpad.classlink.com/ocps)
 
