@@ -10,7 +10,12 @@ require('dotenv').config();
 	const page = await browser.newPage();
 	await page.goto('https://launchpad.classlink.com/ocps');
 
-	// Enter username, password, and click the signin button
+	// Enter username, password, and click the signin button to get to dashboard
+
+	await page.type('#username', process.env.LAUNCHPAD_USERNAME);
+	await page.type('#password', process.env.LAUNCHPAD_PASSWORD);
+
+	await page.click('#signin');
 
 	// Go into Canvas by clicking the Canvas button
 
