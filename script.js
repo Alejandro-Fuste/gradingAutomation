@@ -30,15 +30,25 @@ require('dotenv').config();
 
 	await page.mouse.click(718, 141, [ { clickCount: 2 } ]);
 
+	// await page.waitForNavigation({ waitUntil: 'domcontentloaded' });
+
+	console.log('Step after canvas navigation');
+
 	// Single click on the class
 
 	// await page.waitForXPath('/html/body/div[2]/div[2]/div/div[2]/div[1]/div/div/div[5]/div/div[1]/div[1]/div/a', [
 	// 	{ timeout: 0 }
 	// ]);
 
-	// await page.waitForSelector('#application');
+	// await page.waitForXPath('//*[@id="DashboardCard_Container"]/div/div[1]/div[1]');
+
+	await page.waitForSelector('a[href="/courses/1221491"]');
+
+	console.log('step after wait for xpath of class card');
 
 	// await page.waitForNavigation({ waitUntil: 'domcontentloaded' });
+
+	await page.click('a[href="/courses/1221491"]', [ { clickCount: 2 } ]);
 
 	// await page.mouse.move(257, 454);
 
@@ -70,6 +80,6 @@ window.addEventListener('mousemove', (e) => console.log(`x: ${e.x} | y: ${e.y}`)
 
 */
 
-// #application > #wrapper > #not_right_side > #content-wrapper > #content > #dashboard > .DashboardCard_Container > .ic-DashboardCard__box > .ic-DashboardCard > .ic-DashboardCard__header > a[href = '/courses/1221491'];
+// #application > #wrapper > #not_right_side > #content-wrapper > #content > #dashboard > .DashboardCard_Container > .ic-DashboardCard__box > .ic-DashboardCard > .ic-DashboardCard__header > a[href = "/courses/1221491"]
 
 // #wrapper > #not_right_side > #content-wrapper > #content > #dashboard > .DashboardCard_Container > .ic-DashboardCard__box > .ic-DashboardCard > .ic-DashboardCard__header > a[href = "/courses/1221491"] > ic-DashboardCard__header-title ellipsis > span
