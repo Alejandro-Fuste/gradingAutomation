@@ -19,11 +19,13 @@ require('dotenv').config();
 
 	// Go into Canvas by clicking the Canvas button
 
-	// Go to First Aid/Care Prevention by clicking on the class
+	await page.click('[aria-label="Canvas OCPS"]');
 
-	// Click on the "Grades"
+	// Go to gradebook of First Aid Class by using url in goto method
+
+	await page.goto('https://ocps.instructure.com/courses/1221491/gradebook');
 
 	// Find ungraded all assignments
 
-	// Enter a grade of "100" for all atypements
+	// Enter a grade of "100" for all assignments that are not yet graded
 })();
