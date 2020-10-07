@@ -23,9 +23,22 @@ require('dotenv').config();
 
 	// Go to gradebook of First Aid Class by using url in goto method
 
-	await page.goto('https://ocps.instructure.com/courses/1221491/gradebook');
+	await Promise.all([
+		page.goto('https://ocps.instructure.com/courses/1221491/gradebook'),
+		page.waitForNavigation() // The promise resolves after navigation has finished
+	]);
 
 	// Find ungraded all assignments
+
+	await Promise.all([
+		page.waitForLoadState(),
+		page.waitForSelector('.slick-cell.b1.f1.assignment.assignment_15960887')
+	]);
+
+	await page.type('.slick-cell.b1.f1.assignment.assignment_15960887', '1000');
+
+	// await page.waitForSelector('.slick-cell.b15.f15.assignment.assignment_15815773');
+	// await page.click('.slick-cell.b15.f15.assignment.assignment_15815773');
 
 	// Enter a grade of "100" for all assignments that are not yet graded
 })();
